@@ -1,0 +1,33 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sharelibrary">
+
+    <application>
+        <activity
+            android:name="com.sharelibrary.ShareDialogActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/ShareDialogTheme" />
+
+        <activity
+            android:name="com.sharelibrary.ShareHandlerActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent">
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- 必须注册在微博授权，分享微博时候用到 -->
+        <!--<activity android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
+                  android:configChanges="keyboardHidden|orientation"
+                  android:windowSoftInputMode="adjustResize"
+                  android:exported="false" />-->
+    </application>
+
+
+</manifest>
